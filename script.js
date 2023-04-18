@@ -7,6 +7,6 @@ function showResult(){
     console.log(inputDate.value);
 
     if(inputName.value == 0){
-        //alert("Preencha os campos!");
+        alert("Preencha os campos!");
     }
 }
