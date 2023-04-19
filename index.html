@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <fieldset class="formulario">
-    <legend>Cadastro de pessoas</legend>
-
+        <legend><h1>Cadastro de pessoas</h1></legend>
     <form class="form js-form">
         <label for="name">Nome 
-            <input type="text" id="name" maxlength="120" minlength="3" name="name" class="form-field js-field" pattern="([a-zA-Z]{3,})" required></label>
+            <input type="text" id="name" maxlength="120" minlength="3" name="name" class="form-field js-field" pattern="[a-zA-Z]{3}" required>
         
+            </label>
+           
         <label for="birth-date">Data de nascimento
             <input type="date" name="data" id="birth-date" class="form-field js-field" required pattern="(\d{2}\d{2}\d{4})">
         </label>
         
-        <button type="button" id="btn">Salvar</button>
+        
+        <button type="submit" id="btn">Salvar</button>
     </form>
 </fieldset>
-
 <script src="script.js"></script>
 </body>
 </html>
