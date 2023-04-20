@@ -12,7 +12,7 @@
         <legend><h1>Cadastro de pessoas</h1></legend>
     <form class="form js-form">
         <label for="name">Nome 
-            <input type="text" id="name" maxlength="120" minlength="3" name="name" class="form-field js-field" pattern="[a-zA-Z]{3}" required>
+            <input type="text" id="name" maxlength="120" minlength="3" name="name" class="form-field js-field" pattern="[a-zA-Z]{3,}" required>
         
             </label>
            
@@ -24,6 +24,10 @@
         <button type="submit" id="btn">Salvar</button>
     </form>
 </fieldset>
+
+<div class="show-data">
+    
+</div>
 <script src="script.js"></script>
 </body>
 </html>
