@@ -49,31 +49,31 @@ function setDataLocalStorage() {
   localStorage.setItem("birthDate", JSON.stringify(birthDate));
 }
 
+
 function getDataLocalStorage() {
    const username = inputElementName.value;
-   const birthDay = inputElementDate.value;
+   const birthDay = inputElementDate.value; 
+   const dataFormatada = birthDay.split("-").reverse().join("/")
 
   const getName = JSON.parse(localStorage.getItem("name"));
   const getDate = JSON.parse(localStorage.getItem("birthDate"));
   
-   const data = inputElementDate.valueAsDate
-   const dia = (data.getDate()+1).toString().padStart(2, '0');
-   const mes = (data.getMonth() + 1).toString().padStart(2, '0');
-   const ano = data.getFullYear();
-   let localData = `${dia}/${mes}/${ano}`;
-   console.log(localData)
+  
 
   if (getName && getDate) {
     inputElementName.value = getName;
     inputElementDate.value = getDate;  
-    const nameElement = document.createElement("p");
-  nameElement.textContent = `Nome: ${username}`;
+ 
+   }   
+   const nameElement = document.createElement("p");
+    nameElement.textContent = `Nome: ${username}`;
 
   const dateElement = document.createElement("p");
-  dateElement.textContent = `Data de nascimento: ${localData}`;
+  dateElement.textContent = `Data de nascimento: ${dataFormatada}`;
 
   const dadosDiv = document.querySelector(".show-data");
   dadosDiv.appendChild(nameElement);
   dadosDiv.appendChild(dateElement);
-   }
   }
+
+  getDataLocalStorage()
