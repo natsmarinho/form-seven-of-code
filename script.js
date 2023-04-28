@@ -29,8 +29,6 @@ function showResult(event){
     
 }*/
 
-
-
 const btnSubmt = document.querySelector("#btn").addEventListener("click", showResult);
 const inputElementName = document.querySelector("#name");
 const inputElementDate = document.querySelector("#birth-date");
@@ -38,35 +36,29 @@ const inputElementDate = document.querySelector("#birth-date");
 function showResult(event) {
   event.preventDefault();
   setDataLocalStorage();
+  console.log(setDataLocalStorage)
   getDataLocalStorage();
 }
 
-function setDataLocalStorage() {
-  const name = inputElementName.value;
-  const birthDate = inputElementDate.value;
-
-  localStorage.setItem("name", JSON.stringify(name));
-  localStorage.setItem("birthDate", JSON.stringify(birthDate));
+function setDataLocalStorage(localName, localDate) {
+  const local = localStorage.setItem("name", JSON.stringify(username));
+  const localD = localStorage.setItem("birthDate", JSON.stringify(birthDate));  
+  const username = inputElementName.value;
+  const birthDay = inputElementDate.value; 
 }
 
 
-function getDataLocalStorage() {
-   const username = inputElementName.value;
-   const birthDay = inputElementDate.value; 
-   const dataFormatada = birthDay.split("-").reverse().join("/")
-
+function getDataLocalStorage(getName, getDate) {  
   const getName = JSON.parse(localStorage.getItem("name"));
   const getDate = JSON.parse(localStorage.getItem("birthDate"));
-  
-  
 
-  if (getName && getDate) {
+  const dataFormatada = birthDay.split("-").reverse().join("/")
+
+ if (getName && getDate) {
     inputElementName.value = getName;
-    inputElementDate.value = getDate;  
- 
-   }   
-   const nameElement = document.createElement("p");
-    nameElement.textContent = `Nome: ${username}`;
+    inputElementDate.value = getDate;    
+     const nameElement = document.createElement("p");
+    nameElement.textContent = `Nome: ${localName}`;
 
   const dateElement = document.createElement("p");
   dateElement.textContent = `Data de nascimento: ${dataFormatada}`;
@@ -74,6 +66,5 @@ function getDataLocalStorage() {
   const dadosDiv = document.querySelector(".show-data");
   dadosDiv.appendChild(nameElement);
   dadosDiv.appendChild(dateElement);
+   } 
   }
-
-  getDataLocalStorage()

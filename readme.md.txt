@@ -1,0 +1,1 @@
+https://zerobugs.com.br/ver-post/javascript-converter-data-em-formato-padrao-americano-para-brasileiro/#:~:text=Sem%20mais%20delongas%2C%20para%20voc%C3%AA%20converter%20uma%20data,let%20data_americana%20%3D%20%222020-12-30%22%3B%20let%20data_brasileira%20%3D%20data_americana.split%28%27-%27%29.reverse%28%29.join%28%27%2F%27%29%3B
